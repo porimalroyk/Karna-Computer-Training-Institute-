@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>কর্ণ কম্পিউটার ট্রেনিং ইনস্টিটিউট | Karna Computer Training Institute</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Hind Siliguri for Bengali typography) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Hind Siliguri', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0369a1 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen selection:bg-brand-500 selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 glass-effect border-b border-slate-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-600 to-accent-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/30">
+                        <i class="fa-solid fa-laptop-code text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-800 to-brand-600 bg-clip-text text-transparent block leading-tight">কর্ণ কম্পিউটার</span>
+                        <span class="text-xs text-slate-500 tracking-wider font-semibold block uppercase">ট্রেনিং ইনস্টিটিউট</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 font-medium">
+                    <a href="#home" class="px-3 py-2 rounded-lg text-brand-700 bg-brand-50 hover:text-brand-600 transition-colors">হোম</a>
+                    <a href="#about" class="px-3 py-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition-colors">আমাদের সম্পর্কে</a>
+                    <a href="#courses" class="px-3 py-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition-colors">কোর্সসমূহ</a>
+                    <a href="#verify" class="px-3 py-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition-colors">সনদ যাচাই</a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition-colors">যোগাযোগ</a>
+                </nav>
+
+                <!-- Header CTA Button -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="tel:01792948280" class="flex items-center gap-2 text-sm text-slate-700 font-semibold hover:text-brand-600 mr-2">
+                        <i class="fa-solid fa-phone text-brand-600"></i> 01792948280
+                    </a>
+                    <button onclick="openAdmissionModal()" class="px-5 py-2.5 bg-brand-600 text-white rounded-xl hover:bg-brand-700 shadow-md shadow-brand-600/30 font-medium transition-all transform hover:-translate-y-0.5">
+                        ভর্তি চলছে
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="mobile-menu-btn" class="p-2 text-slate-600 hover:text-brand-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-2">
+            <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-brand-600 bg-brand-50 font-medium">হোম</a>
+            <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 font-medium">আমাদের সম্পর্কে</a>
+            <a href="#courses" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 font-medium">কোর্সসমূহ</a>
+            <a href="#verify" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 font-medium">সনদ যাচাই</a>
+            <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 font-medium">যোগাযোগ</a>
+            <div class="pt-4 border-t border-slate-100 flex flex-col gap-3">
+                <a href="tel:01792948280" class="flex items-center justify-center gap-2 text-slate-700 font-semibold py-2">
+                    <i class="fa-solid fa-phone text-brand-600"></i> 01792948280
+                </a>
+                <button onclick="openAdmissionModal()" class="w-full py-3 bg-brand-600 text-white rounded-xl font-medium shadow-md">
+                    অনলাইন ভর্তি
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg text-white relative overflow-hidden py-20 lg:py-28">
+            <!-- Decorative Elements -->
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 -left-24 w-80 h-80 bg-accent-500/20 rounded-full blur-3xl"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-brand-200 text-sm font-medium">
+                            <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+                            নতুন ব্যাচে ভর্তি চলছে!
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                            ডিজিটাল যুগে নিজেকে গড়ুন <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-300">দক্ষ ও আত্মনির্ভরশীল</span> হিসেবে
+                        </h1>
+                        <p class="text-slate-300 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                            কর্ণ কম্পিউটার ট্রেনিং ইনস্টিটিউটে শিখুন আধুনিক ও প্র্যাকটিক্যাল আইটি কোর্স। অভিজ্ঞ মেন্টর ও মানসম্মত কম্পিউটার ল্যাবের মাধ্যমে আপনার ক্যারিয়ারকে এগিয়ে নিন।
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <button onclick="openAdmissionModal()" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-accent-500 to-brand-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-accent-500/30 transition-all transform hover:-translate-y-0.5">
+                                <i class="fa-solid fa-graduation-cap mr-2"></i> এখনই ভর্তি হন
+                            </button>
+                            <a href="#courses" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-xl backdrop-blur-md transition-all text-center">
+                                কোর্সসমূহ দেখুন
+                            </a>
+                        </div>
+
+                        <!-- Stats Banner inside Hero -->
+                        <div class="grid grid-cols-3 gap-4 pt-10 border-t border-white/10 mt-8">
+                            <div class="text-center lg:text-left">
+                                <div class="text-2xl sm:text-4xl font-extrabold text-cyan-400">১০০০+</div>
+                                <div class="text-xs sm:text-sm text-slate-300">সফল শিক্ষার্থী</div>
+                            </div>
+                            <div class="text-center lg:text-left">
+                                <div class="text-2xl sm:text-4xl font-extrabold text-cyan-400">১০+</div>
+                                <div class="text-xs sm:text-sm text-slate-300">দক্ষ মেন্টর</div>
+                            </div>
+                            <div class="text-center lg:text-left">
+                                <div class="text-2xl sm:text-4xl font-extrabold text-cyan-400">৯৮%</div>
+                                <div class="text-xs sm:text-sm text-slate-300">সন্তুষ্টির হার</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Image/Card -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none rounded-2xl p-2 bg-gradient-to-b from-white/20 to-white/5 border border-white/20 backdrop-blur-md shadow-2xl">
+                            <div class="rounded-xl overflow-hidden shadow-inner bg-slate-900 aspect-video relative flex items-center justify-center group">
+                                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" 
+                                     alt="Computer Lab" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
+                                     onerror="this.src='https://placehold.co/800x450/1e3a8a/ffffff?text=Karna+Computer+Lab'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4 text-left">
+                                    <span class="inline-block px-2.5 py-1 bg-brand-600 text-xs font-semibold rounded mb-2">দেবীগঞ্জ, পঞ্চগড়</span>
+                                    <h3 class="text-lg font-bold text-white">আধুনিক প্র্যাকটিক্যাল ল্যাব সুবিধা</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Bar -->
+        <section class="py-8 bg-white border-b border-slate-100 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-desktop text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">১:১ কম্পিউটার ল্যাব</h4>
+                            <p class="text-xs text-slate-500">প্রতিজন শিক্ষার্থীর জন্য আলাদা পিসি</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-certificate text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">সরকারি মানের সার্টিফিকেট</h4>
+                            <p class="text-xs text-slate-500">অনলাইনে যাচাইযোগ্য সনদ</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chalkboard-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">অভিজ্ঞ ট্রেইনার</h4>
+                            <p class="text-xs text-slate-500">সহজ ও প্রাঞ্জল উপস্থাপনা</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-clock-rotate-left text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">লাইফটাইম সাপোর্ট</h4>
+                            <p class="text-xs text-slate-500">কোর্স শেষের পরেও গাইডলাইন</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="inline-block px-3 py-1 bg-brand-100 text-brand-800 rounded-lg text-sm font-semibold">
+                            আমাদের কথা
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                            গুণগত মানসম্পন্ন আইটি প্রশিক্ষণে আমরা অঙ্গীকারবদ্ধ
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            কর্ণ কম্পিউটার ট্রেনিং ইনস্টিটিউট দেবীগঞ্জ, পঞ্চগড়ে অবস্থিত একটি নির্ভরযোগ্য আইটি শিক্ষা প্রতিষ্ঠান। বর্তমান তথ্যপ্রযুক্তির যুগে নিজেদের যোগ্য হিসেবে গড়ে তুলতে আমরা শিক্ষার্থীদের প্রদান করি বাস্তবমুখী ও প্র্যাকটিক্যাল কম্পিউটার প্রশিক্ষণ।
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            আমাদের উদ্দেশ্য কেবল সার্টিফিকেট প্রদান নয়, বরং প্রত্যেক শিক্ষার্থীকে বাস্তব কাজের উপযোগী করে গড়ে তোলা। আমাদের সুসজ্জিত কম্পিউটার ল্যাব এবং নিবেদিতপ্রাণ শিক্ষকবৃন্দ সবসময় আপনাকে গাইড করতে প্রস্তুত।
+                        </p>
+                        <div class="space-y-3 pt-2">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-600"></i>
+                                <span class="font-medium text-slate-700">মনোরম ও শীতাতপ নিয়ন্ত্রিত আধুনিক ল্যাব</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-600"></i>
+                                <span class="font-medium text-slate-700">ফ্লেক্সিবল ক্লাস শিডিউল (সকাল, দুপুর ও সন্ধ্যা ব্যাচ)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-600"></i>
+                                <span class="font-medium text-slate-700">অনলাইন ও অফলাইন উভয় মাধ্যমে ক্লাস সুবিধা</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 relative">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500&q=80" 
+                             alt="Student learning" 
+                             class="rounded-2xl shadow-lg w-full h-64 object-cover"
+                             onerror="this.src='https://placehold.co/500x500/3b82f6/ffffff?text=IT+Training'">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80" 
+                             alt="Classroom setup" 
+                             class="rounded-2xl shadow-lg w-full h-64 object-cover mt-8"
+                             onerror="this.src='https://placehold.co/500x500/06b6d4/ffffff?text=Practical+Lab'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="px-3 py-1 bg-brand-100 text-brand-800 rounded-lg text-sm font-semibold">আমাদের কোর্সসমূহ</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">ক্যারিয়ার গঠনে উপযোগী সেরা প্রোগ্রামসমূহ</h2>
+                    <p class="text-slate-600 text-lg">আপনার পছন্দ ও প্রয়োজন অনুযায়ী সঠিক কোর্সটি বেছে নিয়ে আজই শুরু করুন আপনার ডিজিটাল যাত্রা।</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Course 1 -->
+                    <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Office Application" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/2563eb/ffffff?text=Office+Application'">
+                            <span class="absolute top-4 right-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full">জনপ্রিয়</span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">কম্পিউটার অফিস অ্যাপ্লিকেশন</h3>
+                                <p class="text-slate-600 text-sm mb-4">MS Word, Excel, PowerPoint, Access, টাইপিং এবং বেসিক ইন্টারনেট ব্রাউজিং। যেকোনো চাকুরীর জন্য আবশ্যক।</p>
+                                <div class="flex items-center gap-4 text-xs font-medium text-slate-500 border-t border-b border-slate-200 py-3 mb-4">
+                                    <span><i class="fa-regular fa-clock text-brand-600 mr-1"></i> ৩/৬ মাস</span>
+                                    <span><i class="fa-solid fa-book-open text-brand-600 mr-1"></i> প্র্যাকটিক্যাল নির্ভর</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-slate-500 block">কোর্স ফি</span>
+                                    <span class="text-2xl font-extrabold text-brand-600">৳ ৩,০০০</span>
+                                </div>
+                                <button onclick="openAdmissionModal('কম্পিউটার অফিস অ্যাপ্লিকেশন')" class="px-4 py-2 bg-brand-600 text-white font-medium text-sm rounded-lg hover:bg-brand-700 transition-colors">
+                                    ভর্তি হন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Graphic Design" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/0891b2/ffffff?text=Graphic+Design'">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">গ্রাফিক ডিজাইন ও ফ্রিল্যান্সিং</h3>
+                                <p class="text-slate-600 text-sm mb-4">Adobe Photoshop, Illustrator, লোগো ডিজাইন, ব্যানার, ব্র্যান্ডিং এবং মার্কেটপ্লেস গাইডলাইন।</p>
+                                <div class="flex items-center gap-4 text-xs font-medium text-slate-500 border-t border-b border-slate-200 py-3 mb-4">
+                                    <span><i class="fa-regular fa-clock text-brand-600 mr-1"></i> ৪ মাস</span>
+                                    <span><i class="fa-solid fa-briefcase text-brand-600 mr-1"></i> ফ্রিল্যান্সিং সাপোর্ট</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-slate-500 block">কোর্স ফি</span>
+                                    <span class="text-2xl font-extrabold text-brand-600">৳ ৫,০০০</span>
+                                </div>
+                                <button onclick="openAdmissionModal('গ্রাফিক ডিজাইন ও ফ্রিল্যান্সিং')" class="px-4 py-2 bg-brand-600 text-white font-medium text-sm rounded-lg hover:bg-brand-700 transition-colors">
+                                    ভর্তি হন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Hardware & Troubleshooting" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/1d4ed8/ffffff?text=Hardware'">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">হার্ডওয়্যার ও ট্রাবলশুটিং</h3>
+                                <p class="text-slate-600 text-sm mb-4">কম্পিউটার অ্যাসেম্বলিং, উইন্ডোজ ইনস্টলেশন, সফটওয়্যার সেটআপ ও সাধারণ সমস্যা সমাধান।</p>
+                                <div class="flex items-center gap-4 text-xs font-medium text-slate-500 border-t border-b border-slate-200 py-3 mb-4">
+                                    <span><i class="fa-regular fa-clock text-brand-600 mr-1"></i> ৩ মাস</span>
+                                    <span><i class="fa-solid fa-wrench text-brand-600 mr-1"></i> ১০০% প্র্যাকটিক্যাল</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-slate-500 block">কোর্স ফি</span>
+                                    <span class="text-2xl font-extrabold text-brand-600">৳ ৪,০০০</span>
+                                </div>
+                                <button onclick="openAdmissionModal('হার্ডওয়্যার ও ট্রাবলশুটিং')" class="px-4 py-2 bg-brand-600 text-white font-medium text-sm rounded-lg hover:bg-brand-700 transition-colors">
+                                    ভর্তি হন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 4 -->
+                    <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Database Management" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/0284c7/ffffff?text=Database'">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">ডাটাবেজ ম্যানেজমেন্ট সিস্টেম</h3>
+                                <p class="text-slate-600 text-sm mb-4">ডাটা এন্ট্রি, ডাটা এনালাইসিস, SQL ডাটাবেজ এবং এক্সেল অ্যাডভান্সড ফাংশন টিউটোরিয়াল।</p>
+                                <div class="flex items-center gap-4 text-xs font-medium text-slate-500 border-t border-b border-slate-200 py-3 mb-4">
+                                    <span><i class="fa-regular fa-clock text-brand-600 mr-1"></i> ৩ মাস</span>
+                                    <span><i class="fa-solid fa-database text-brand-600 mr-1"></i> অ্যাডভান্সড গাইড</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-slate-500 block">কোর্স ফি</span>
+                                    <span class="text-2xl font-extrabold text-brand-600">৳ ৩,৫০০</span>
+                                </div>
+                                <button onclick="openAdmissionModal('ডাটাবেজ ম্যানেজমেন্ট')" class="px-4 py-2 bg-brand-600 text-white font-medium text-sm rounded-lg hover:bg-brand-700 transition-colors">
+                                    ভর্তি হন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 5 -->
+                    <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Digital Marketing" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Digital+Marketing'">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">ডিজিটাল মার্কেটিং</h3>
+                                <p class="text-slate-600 text-sm mb-4">ফেসবুক মার্কেটিং, এসইও (SEO), কন্টেন্ট রাইটিং এবং অনলাইন বিজনেস প্রমোশন ট্রিকস।</p>
+                                <div class="flex items-center gap-4 text-xs font-medium text-slate-500 border-t border-b border-slate-200 py-3 mb-4">
+                                    <span><i class="fa-regular fa-clock text-brand-600 mr-1"></i> ৩ মাস</span>
+                                    <span><i class="fa-solid fa-chart-line text-brand-600 mr-1"></i> লাইভ প্রজেক্ট</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-slate-500 block">কোর্স ফি</span>
+                                    <span class="text-2xl font-extrabold text-brand-600">৳ ৪,০০০</span>
+                                </div>
+                                <button onclick="openAdmissionModal('ডিজিটাল মার্কেটিং')" class="px-4 py-2 bg-brand-600 text-white font-medium text-sm rounded-lg hover:bg-brand-700 transition-colors">
+                                    ভর্তি হন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 6 -->
+                    <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Web Design Basics" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/06b6d4/ffffff?text=Web+Design'">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">ওয়েব ডিজাইন বেসিকস</h3>
+                                <p class="text-slate-600 text-sm mb-4">HTML5, CSS3, Tailwind CSS এবং ওয়েবসাইট তৈরির মৌলিক ধারণা ও প্র্যাকটিক্যাল গাইড।</p>
+                                <div class="flex items-center gap-4 text-xs font-medium text-slate-500 border-t border-b border-slate-200 py-3 mb-4">
+                                    <span><i class="fa-regular fa-clock text-brand-600 mr-1"></i> ৪ মাস</span>
+                                    <span><i class="fa-solid fa-code text-brand-600 mr-1"></i> কোডিং প্রজেক্ট</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-slate-500 block">কোর্স ফি</span>
+                                    <span class="text-2xl font-extrabold text-brand-600">৳ ৪,৫০০</span>
+                                </div>
+                                <button onclick="openAdmissionModal('ওয়েব ডিজাইন বেসিকস')" class="px-4 py-2 bg-brand-600 text-white font-medium text-sm rounded-lg hover:bg-brand-700 transition-colors">
+                                    ভর্তি হন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Verification Section -->
+        <section id="verify" class="py-20 bg-gradient-to-br from-slate-900 via-brand-950 to-slate-900 text-white relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center space-y-4 mb-10">
+                    <span class="px-3 py-1 bg-brand-500/20 text-cyan-400 border border-cyan-500/30 rounded-lg text-sm font-semibold">অনলাইন সার্ভিস</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold">স্টুডেন্ট রেজাল্ট ও সনদ যাচাই</h2>
+                    <p class="text-slate-400">আপনার রোল বা রেজিস্ট্রেশন নম্বর দিয়ে অর্জিত সনদ এবং রেজাল্ট যাচাই করুন</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl p-6 sm:p-10 shadow-2xl">
+                    <form id="verify-form" onsubmit="handleVerification(event)" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">রোল নম্বর (Roll Number)</label>
+                                <input type="text" id="verify-roll" required placeholder="उदा: 1024" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">রেজিস্ট্রেশন নম্বর (Reg. Number)</label>
+                                <input type="text" id="verify-reg" required placeholder="उदा: KCTI-2024-88" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all">
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-cyan-500 to-brand-600 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-cyan-500/20 transition-all">
+                            <i class="fa-solid fa-magnifying-glass mr-2"></i> তথ্য যাচাই করুন
+                        </button>
+                    </form>
+
+                    <!-- Verification Result Display Box -->
+                    <div id="verify-result" class="hidden mt-8 p-6 bg-slate-800/90 border border-slate-700 rounded-xl space-y-4">
+                        <!-- Content inserted via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery / Campus Highlights -->
+        <section class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                    <span class="px-3 py-1 bg-brand-100 text-brand-800 rounded-lg text-sm font-semibold">ফটো গ্যালারি</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900">আমাদের ক্লাসরুম ও কার্যক্রম</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="h-48 rounded-xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="Lab 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/500x300/1e3a8a/ffffff?text=Gallery+1'">
+                    </div>
+                    <div class="h-48 rounded-xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=80" alt="Lab 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/500x300/0891b2/ffffff?text=Gallery+2'">
+                    </div>
+                    <div class="h-48 rounded-xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80" alt="Lab 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/500x300/3b82f6/ffffff?text=Gallery+3'">
+                    </div>
+                    <div class="h-48 rounded-xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=500&q=80" alt="Lab 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/500x300/1d4ed8/ffffff?text=Gallery+4'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <!-- Contact Info -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div>
+                            <span class="px-3 py-1 bg-brand-100 text-brand-800 rounded-lg text-sm font-semibold">যোগাযোগ</span>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mt-2">আমাদের সাথে যোগাযোগ করুন</h2>
+                            <p class="text-slate-600 mt-2">যেকোনো প্রশ্ন, তথ্য অথবা ভর্তির জন্য সরাসরি অফিসে আসুন বা কল করুন।</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg">ঠিকানা</h4>
+                                    <p class="text-slate-600">দেবীগঞ্জ বাজার (প্রধান সড়ক), দেবীগঞ্জ, পঞ্চগড়, বাংলাদেশ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg">ফোন নম্বর</h4>
+                                    <p class="text-slate-600 font-semibold">01792948280</p>
+                                    <p class="text-xs text-slate-500">সকাল ৯:০০ - রাত ৮:০০ (প্রতিদিন)</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg">ইমেইল</h4>
+                                    <p class="text-slate-600">karnacomputer.info@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map preview mock -->
+                        <div class="p-4 bg-slate-100 rounded-2xl border border-slate-200">
+                            <div class="flex items-center gap-2 text-sm text-slate-700 font-semibold mb-2">
+                                <i class="fa-solid fa-map"></i> আমাদের অবস্থান
+                            </div>
+                            <div class="bg-slate-300 h-32 rounded-xl flex items-center justify-center text-slate-600 font-medium">
+                                <i class="fa-solid fa-map-pin text-brand-600 mr-2"></i> দেবীগঞ্জ, পঞ্চগড়
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-7 bg-slate-50 rounded-2xl p-6 sm:p-10 border border-slate-200 shadow-sm">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6">একটি বার্তা পাঠান</h3>
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">আপনার নাম *</label>
+                                    <input type="text" required placeholder="আপনার নাম লিখুন" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">মোবাইল নম্বর *</label>
+                                    <input type="tel" required placeholder="017XXXXXXXX" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">আগ্রহী কোর্স</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white">
+                                    <option>কম্পিউটার অফিস অ্যাপ্লিকেশন</option>
+                                    <option>গ্রাফিক ডিজাইন ও ফ্রিল্যান্সিং</option>
+                                    <option>হার্ডওয়্যার ও ট্রাবলশুটিং</option>
+                                    <option>ডাটাবেজ ম্যানেজমেন্ট</option>
+                                    <option>ডিজিটাল মার্কেটিং</option>
+                                    <option>অন্যান্য</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">আপনার বার্তা</label>
+                                <textarea rows="4" placeholder="আপনার প্রশ্ন বা মতামত সংক্ষেপে লিখুন..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/20">
+                                বার্তা পাঠান
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">কর্ণ কম্পিউটার</span>
+                    </div>
+                    <p class="text-sm">একটি আধুনিক ও বিশ্বাসযোগ্য আইটি ট্রেনিং ইনস্টিটিউট। দেবীগঞ্জ, পঞ্চগড়।</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">দ্রুত লিঙ্ক</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-white transition-colors">হোম</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">আমাদের কথা</a></li>
+                        <li><a href="#courses" class="hover:text-white transition-colors">কোর্সসমূহ</a></li>
+                        <li><a href="#verify" class="hover:text-white transition-colors">সনদ যাচাই</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">কোর্সসমূহ</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#courses" class="hover:text-white transition-colors">অফিস অ্যাপ্লিকেশন</a></li>
+                        <li><a href="#courses" class="hover:text-white transition-colors">গ্রাফিক ডিজাইন</a></li>
+                        <li><a href="#courses" class="hover:text-white transition-colors">হার্ডওয়্যার ট্রেনিং</a></li>
+                        <li><a href="#courses" class="hover:text-white transition-colors">ডিজিটাল মার্কেটিং</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">জরুরী যোগাযোগ</h4>
+                    <p class="text-sm mb-2"><i class="fa-solid fa-phone mr-2 text-brand-500"></i> 01792948280</p>
+                    <p class="text-sm mb-4"><i class="fa-solid fa-location-dot mr-2 text-brand-500"></i> দেবীগঞ্জ, পঞ্চগড়</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-brand-600 text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-brand-600 text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-brand-600 text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+                <p>&copy; <span id="year"></span> কর্ণ কম্পিউটার ট্রেনিং ইনস্টিটিউট (Karna Computer Training Institute)। সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Online Admission Modal -->
+    <div id="admission-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeAdmissionModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold p-2">
+                &times;
+            </button>
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-slate-900">অনলাইন ভর্তি ফরম</h3>
+                <p class="text-slate-500 text-sm mt-1">তথ্য পূরণ করুন, আমাদের প্রতিনিধি অতিসত্বর যোগাযোগ করবেন</p>
+            </div>
+            <form onsubmit="handleAdmissionSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">শিক্ষার্থীর নাম *</label>
+                    <input type="text" required placeholder="পূর্ণ নাম লিখুন" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">পিতার নাম</label>
+                    <input type="text" placeholder="পিতার নাম" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">মোবাইল নম্বর *</label>
+                        <input type="tel" required placeholder="017XXXXXXXX" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">পছন্দের কোর্স *</label>
+                        <select id="modal-course-select" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                            <option>কম্পিউটার অফিস অ্যাপ্লিকেশন</option>
+                            <option>গ্রাফিক ডিজাইন ও ফ্রিল্যান্সিং</option>
+                            <option>হার্ডওয়্যার ও ট্রাবলশুটিং</option>
+                            <option>ডাটাবেজ ম্যানেজমেন্ট</option>
+                            <option>ডিজিটাল মার্কেটিং</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">ঠিকানা</label>
+                    <textarea rows="2" placeholder="গ্রাম/ইউনিয়ন/উপজেলা" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 transition-colors shadow-lg">
+                    আবেদন নিশ্চিত করুন
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-emerald-600 text-white px-6 py-4 rounded-xl shadow-xl flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-xl"></i>
+        <span id="toast-message" class="text-sm font-medium"></span>
+    </div>
+
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu on clicking links
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Admission Modal Handlers
+        function openAdmissionModal(courseName = '') {
+            const modal = document.getElementById('admission-modal');
+            const courseSelect = document.getElementById('modal-course-select');
+            if (courseName && courseSelect) {
+                courseSelect.value = courseName;
+            }
+            modal.classList.remove('hidden');
+        }
+
+        function closeAdmissionModal() {
+            document.getElementById('admission-modal').classList.add('hidden');
+        }
+
+        // Toast Message Notification Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            toastMessage.textContent = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Handle Admission Form Submission
+        function handleAdmissionSubmit(e) {
+            e.preventDefault();
+            closeAdmissionModal();
+            showToast('আপনার ভর্তির আবেদন সফলভাবে জমা হয়েছে! আমরা শীঘ্রই যোগাযোগ করব।');
+            e.target.reset();
+        }
+
+        // Handle Contact Form Submission
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('ধন্যবাদ! আপনার বার্তাটি আমাদের কাছে পৌঁছেছে।');
+            e.target.reset();
+        }
+
+        // Handle Student Result & Verification Demo
+        function handleVerification(e) {
+            e.preventDefault();
+            const roll = document.getElementById('verify-roll').value;
+            const reg = document.getElementById('verify-reg').value;
+            const resultBox = document.getElementById('verify-result');
+
+            // Simple verification simulation logic
+            resultBox.classList.remove('hidden');
+            resultBox.innerHTML = `
+                <div class="flex items-center justify-between border-b border-slate-700 pb-3">
+                    <span class="text-emerald-400 font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-certificate"></i> সনদ বৈধ পাওয়া গেছে
+                    </span>
+                    <span class="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2.5 py-1 rounded-full">উত্তীর্ণ</span>
+                </div>
+                <div class="grid grid-cols-2 gap-y-2 text-sm pt-2">
+                    <span class="text-slate-400">শিক্ষার্থীর নাম:</span>
+                    <span class="font-semibold text-white">মোঃ আল আমিন</span>
+                    <span class="text-slate-400">রোল / রেজি:</span>
+                    <span class="font-semibold text-white">${roll} / ${reg}</span>
+                    <span class="text-slate-400">কোর্সের নাম:</span>
+                    <span class="font-semibold text-cyan-300">অফিস অ্যাপ্লিকেশন (৬ মাস)</span>
+                    <span class="text-slate-400">প্রাপ্ত গ্রেড:</span>
+                    <span class="font-semibold text-emerald-400">A+ (A Plus)</span>
+                    <span class="text-slate-400">ইস্যু তারিখ:</span>
+                    <span class="font-semibold text-white">১৫ জানুয়ারি, ২০২৪</span>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
